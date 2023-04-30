@@ -18,7 +18,8 @@ function BotCollection(onAddToArmy) {
     <Bot key={bot.id} bot={bot} onAddToArmy={onAddToArmy} />
   ));
 
-  return <div>Bot</div>;
+  //render bot collection
+  return <div className="bot-collection">{botList}</div>;
 }
 
 export default BotCollection;
