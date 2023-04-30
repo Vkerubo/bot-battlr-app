@@ -12,6 +12,8 @@ function BotCollection() {
     .catch((error) => console.error(error));
   }, []);
 
+ 
+
   return <div>Bot</div>;
 }
 
