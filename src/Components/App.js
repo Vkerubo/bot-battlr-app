@@ -10,10 +10,12 @@ function App() {
   //fetch bots data from server
   useEffect(() => {
     fetch("http://localhost:8000/bots")
-      .then((response) => response.json)
+      .then((response) => response.json())
       .then((data) => setBots(data))
       .catch((error) => console.error(error));
   }, []);
+
+  console.log(bots);
 
   //add bot to army
   function handleAddFromArmyBot(bot) {
@@ -43,6 +45,9 @@ function App() {
   return (
     <div className="App">
       <h1>Bot Battlr</h1>
+      <div className="main-container">
+        <BotCollection bots={bots} onAddToArmy={handleAddFromArmyBot} />
+      </div>
     </div>
   );
 }

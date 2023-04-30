@@ -25,6 +25,11 @@ function Bot({ bot, onAddToArmy, onDischarge }) {
         <strong>Armor:</strong>
         {bot.armor}
       </p>
+      <p>
+        <strong>catchphrase:</strong>
+        {bot.catchphrase}
+      </p>
+      <img src={bot.avatar_url} alt={bot.name} />
       {/*render add to army or discharge button*/}
       {bot.in_army ? (
         <button className="discharge-btn" onClick={() => onDischarge(bot)}>
