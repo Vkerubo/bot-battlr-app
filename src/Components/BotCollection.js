@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
-const BotCollection = () => {
+function BotCollection() {
   return (
-    <div>BotCollection</div>
+    <div>Bot</div>
   )
 }
 
