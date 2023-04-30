@@ -20,6 +20,11 @@ function App() {
     setArmy([...army, bot]);
   }
 
+  //remove bot from army
+  function handleRemoveFromArmy(bot) {
+    setArmy(army.filter((b) => b.id !== bot.id));
+  }
+
   //render app component
   return (
     <div className="App">
