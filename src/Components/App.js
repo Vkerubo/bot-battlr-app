@@ -25,6 +25,20 @@ function App() {
     setArmy(army.filter((b) => b.id !== bot.id));
   }
 
+  //discharge bot from army
+  function handleDischarge(bot) {
+    setBots([
+      ...bots.map((b) => {
+        if (b.id === bot.id) {
+          return { ...b, in_army: false };
+        } else {
+          return b;
+        }
+      }),
+    ]);
+    setArmy(army.filter((b) => b.id !== bot.id));
+  }
+
   //render app component
   return (
     <div className="App">
