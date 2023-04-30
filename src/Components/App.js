@@ -15,6 +15,11 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
+  //add bot to army
+  function handleAddFromArmyBot(bot) {
+    setArmy([...army, bot]);
+  }
+
   //render app component
   return (
     <div className="App">
