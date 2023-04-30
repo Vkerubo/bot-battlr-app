@@ -13,7 +13,12 @@ function YourBotArmy({ army, onRemoveFromArmy, onDischarge }) {
   ));
 
   //render YourBotArmy component
-  return <div>YourBotArmy</div>;
+  return (
+    <div className="bot-army">
+      <h2>My Bot Army</h2>
+      {botList.length > 0 ? botList : <p>Oops! No bots in your army.</p>}
+    </div>
+  );
 }
 
 export default YourBotArmy;
