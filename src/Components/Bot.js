@@ -25,6 +25,16 @@ function Bot({ bot, onAddToArmy, onDischarge }) {
         <strong>Armor:</strong>
         {bot.armor}
       </p>
+      {/*render add to army or discharge button*/}
+      {bot.in_army ? (
+        <button className="discharge-btn" onClick={() => onDischarge(bot)}>
+          Discharge
+        </button>
+      ) : (
+        <button className="add-btn" onClick={handleClick}>
+          Add to Army
+        </button>
+      )}
     </div>
   );
 }
