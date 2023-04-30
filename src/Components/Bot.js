@@ -1,7 +1,11 @@
 import React from "react";
 
-//render a single bot
-function Bot() {
+function Bot({ bot, onAddToArmy, onDischarge }) {
+  //function to add bot to army when clicked
+  function handleClick() {
+    onAddToArmy(bot);
+  }
+
   return <div>Bot</div>;
 }
 
