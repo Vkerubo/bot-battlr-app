@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 
-function Bot({ bot, onAddToArmy, onDischarge }) {
-  //initialize state for modal visibility
+function Bot({ bot, inArmy, onRemoveFromArmy, onAddToArmy, onDischarge }) {
   const [showModal, setShowModal] = useState(false);
 
-  //toggle modal visibility
+  const buttonText = inArmy ? "Discharge" : "Add to army";
+  const buttonAction = inArmy ? onDischarge : onAddToArmy;
+
   function toggleModal() {
     setShowModal(!showModal);
   }
-  //function to add bot to army when clicked
+
   function handleClick() {
     onAddToArmy(bot);
   }
 
-  // Remove bot from army when button is clicked
   function handleRemoveClick() {
-    onDischarge(bot);
+    onRemoveFromArmy(bot);
   }
 
-  //render Bot component
   return (
     <div className="bot-card">
       <h3>{bot.name}</h3>
@@ -28,21 +27,10 @@ function Bot({ bot, onAddToArmy, onDischarge }) {
         {bot.catchphrase}
       </p>
       <img src={bot.avatar_url} alt={bot.name} />
-      {/*render add to army or discharge button*/}
-      {bot.in_army ? (
-        <button className="remove-btn" onClick={handleRemoveClick}>
-          Remove from Army
-        </button>
-      ) : (
-        <button className="add-btn" onClick={handleClick}>
-          Add to Army
-        </button>
-      )}
-      {/* Render button to toggle modal */}
+      <button onClick={() => buttonAction(bot)}>{buttonText}</button>
       <button className="details-btn" onClick={toggleModal}>
         View Details
       </button>
-      {/* Render modal when showModal is true */}
       {showModal && (
         <div className="modal">
           <div className="modal-content">
@@ -59,6 +47,12 @@ function Bot({ bot, onAddToArmy, onDischarge }) {
               <strong>Armor:</strong> {bot.armor}
             </p>
             <p>{bot.description}</p>
+            {inArmy && (
+              <button className="remove-btn" onClick={handleRemoveClick}>
+                X
+              </button>
+            )}
+            {inArmy && <button onClick={onDischarge}>Discharge</button>}
             <button onClick={toggleModal}>Close</button>
           </div>
         </div>
