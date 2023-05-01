@@ -35,6 +35,9 @@ function Bot({ bot, inArmy, onRemoveFromArmy, onAddToArmy, onDischarge }) {
         <div className="modal">
           <div className="modal-content">
             <p>
+              <strong>Bot specs</strong>
+            </p>
+            <p>
               <strong>Class:</strong> {bot.bot_class}
             </p>
             <p>
