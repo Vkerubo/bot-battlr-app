@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import BotCollection from "./BotCollection";
 import YourBotArmy from "./YourBotArmy";
+import SortBar from "./SortBar";
+import "./Styles.css";
 
 function App() {
   // Initialize state for bots and army
@@ -16,6 +18,21 @@ function App() {
       .then((data) => setBots(data))
       .catch((error) => console.error(error));
   }, []);
+
+  // Sort bots by health
+  function sortBotsByHealth() {
+    setBots([...bots].sort((a, b) => b.health - a.health));
+  }
+
+  // Sort bots by damage
+  function sortBotsByDamage() {
+    setBots([...bots].sort((a, b) => b.damage - a.damage));
+  }
+
+  // Sort bots by armor
+  function sortBotsByArmor() {
+    setBots([...bots].sort((a, b) => b.armor - a.armor));
+  }
 
   // Add bot to army
   function handleAddToArmy(bot) {
@@ -51,6 +68,7 @@ function App() {
       .catch((error) => console.error(error));
   }
 
+  // Remove bot from army and update bot in the backend
   function handleRemoveFromArmy(botToRemove) {
     setArmy((prevArmy) => prevArmy.filter((bot) => bot.id !== botToRemove.id));
     setBots(
@@ -77,7 +95,11 @@ function App() {
     );
   } else if (renderComponent === "YourBotArmy") {
     componentToRender = (
-      <YourBotArmy army={army} onRemoveFromArmy={handleRemoveFromArmy} />
+      <YourBotArmy
+        army={army}
+        onRemoveFromArmy={handleRemoveFromArmy}
+        onDischarge={handleDischarge}
+      />
     );
   } else {
     componentToRender = <p>Welcome to The Bot Battler</p>;
@@ -92,6 +114,11 @@ function App() {
       <button onClick={() => handleButtonClick("YourBotArmy")}>
         My Bot Army
       </button>
+      <SortBar
+        onSortByHealth={sortBotsByHealth}
+        onSortByDamage={sortBotsByDamage}
+        onSortByArmor={sortBotsByArmor}
+      />
       {componentToRender}
     </div>
   );

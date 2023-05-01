@@ -22,10 +22,8 @@ function Bot({ bot, inArmy, onRemoveFromArmy, onAddToArmy, onDischarge }) {
     <div className="bot-card">
       <h3>{bot.name}</h3>
 
-      <p>
-        <strong>catchphrase:</strong>
-        {bot.catchphrase}
-      </p>
+      <p>{bot.catchphrase}</p>
+      <p>{bot.bot_class}</p>
       <img src={bot.avatar_url} alt={bot.name} />
       <button onClick={() => buttonAction(bot)}>{buttonText}</button>
       <button className="details-btn" onClick={toggleModal}>
@@ -37,9 +35,7 @@ function Bot({ bot, inArmy, onRemoveFromArmy, onAddToArmy, onDischarge }) {
             <p>
               <strong>Bot specs</strong>
             </p>
-            <p>
-              <strong>Class:</strong> {bot.bot_class}
-            </p>
+
             <p>
               <strong>Health:</strong> {bot.health}
             </p>
