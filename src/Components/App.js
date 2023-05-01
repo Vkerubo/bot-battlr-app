@@ -15,8 +15,6 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
-  console.log(bots);
-
   //add bot to army
   function handleAddFromArmyBot(bot) {
     setArmy([...army, bot]);
@@ -47,6 +45,11 @@ function App() {
       <h1>Bot Battlr</h1>
       <div className="main-container">
         <BotCollection bots={bots} onAddToArmy={handleAddFromArmyBot} />
+        <YourBotArmy
+          army={army}
+          onRemoveFromArmy={handleRemoveFromArmy}
+          onDischarge={handleDischarge}
+        />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Bot from "./Bot";
 
-function BotCollection({ bots = [], onAddToArmy }) {
+function BotCollection({ bots, onAddToArmy }) {
   //create array of bot components from bots array
 
   const botList = bots.map((bot) => (
