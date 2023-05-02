@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# The Bot Battler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+The Bot Battler is a web application built using React that allows users to create and manage their own bot army. Users can browse a collection of bots, add them to their army, remove them from their army, and sort them by various attributes such as health, damage, and armor.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+To get started with The Bot Battler, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Install the necessary dependencies by running `npm install`.
+4. Start the development server by running `npm start`.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+The Bot Battler has the following features:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Browse a collection of bots.
+- Add bots to your army.
+- Remove bots from your army.
+- Sort bots in the collection by health, damage, or armor.
+- View your current bot army.
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Bot Battler was built using the following technologies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- JavaScript
+- HTML
+- CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Code Overview
 
-### `npm run eject`
+The `App` component is the main component of the application. It maintains the state of the bots collection, the user's bot army, and which component to render (either `BotCollection` or `YourBotArmy`). It also contains functions to sort the bots and add, remove, and discharge bots from the army.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The `BotCollection` component displays the collection of bots and allows the user to add bots to their army.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `YourBotArmy` component displays the user's current bot army and allows the user to remove bots from their army or discharge them (which removes them from the army and also deletes them from the backend).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The `SortBar` component displays buttons to sort the bots by health, damage, or armor.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Author
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Github -(Vkerubo)
